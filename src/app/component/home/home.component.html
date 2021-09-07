@@ -1,18 +1,40 @@
-<div class="form-input" >
-    <form class="example-form">
-        <table class="example-full-width" cellspacing="0"><tr>
+<div class="title"><h1 >Find carriers by city and/or state</h1></div>
+<div class="section" >
+    
+    <form class="example-form" #f="ngForm" (ngSubmit)="getData(f.value)">
+        <table><tr>
           <td><mat-form-field class="example-full-width" appearance="fill">
             <mat-label>City</mat-label>
-            <input matInput placeholder="Ex. San Francisco">
+            <input matInput placeholder="Ex. Miami" name="city" ngModel>
           </mat-form-field></td>
-          
+
           <td><mat-form-field class="example-full-width" appearance="fill">
             <mat-label>State</mat-label>
-            <input matInput placeholder="Ex. California">
+            <input matInput placeholder="Ex. Fl" name="state" ngModel>
           </mat-form-field></td>
+          <td><button class="button" mat-raised-button color="primary">Submit</button></td>
           
         </tr></table>
-    </form>
-      
-        
+
+          
+    </form>    
+</div>
+
+<div class="section">
+    <table >
+        <thead>
+          <tr>
+            <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let el of elements">
+            <th scope="row">{{el.id}}</th>
+            <td>{{el.first}}</td>
+            <td>{{el.last}}</td>
+            <td>{{el.handle}}</td>
+          </tr>
+        </tbody>
+      </table>
+
 </div>
