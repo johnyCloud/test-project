@@ -1,5 +1,5 @@
 <div class="title"><h1 >Find carriers by city and/or state</h1></div>
-<div class="section" >
+<mat-card class="section" >
     
     <form class="example-form" #f="ngForm" (ngSubmit)="getData(f.value)">
         <table><tr>
@@ -12,19 +12,22 @@
             <mat-label>State</mat-label>
             <input matInput placeholder="Ex. Fl" name="state" ngModel>
           </mat-form-field></td>
-          <td><button class="button" mat-raised-button color="primary">Submit</button></td>
           
-        </tr></table>
+          
+        </tr>
+      <tr><td class="button"><button  mat-raised-button color="primary">Submit</button></td></tr>
+      </table>
 
           
     </form>    
-</div>
+</mat-card>
 
 <div class="section">
-    <table class="carrier-list">
-        <thead>
+    <table class="carrier-list" *ngIf="elements" >
+        <thead >
           <tr>
-            <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+            <th  #thenBlock *ngFor="let head of headElements" scope="col">{{head}} </th>
+
           </tr>
         </thead>
         <tbody>

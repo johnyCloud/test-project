@@ -9,7 +9,7 @@ import {RequestsService} from '../../sevices/requests.service'
 })
 export class HomeComponent implements OnInit {
 
-  elements: any = [];
+  elements: any = null;
   headElements = [ 'Carrier Name', 'Email', 'Phone Number'];
   
   constructor(public requestsService : RequestsService) { }
