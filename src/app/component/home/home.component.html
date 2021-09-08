@@ -22,12 +22,13 @@
     </form>    
 </mat-card>
 
-<div class="section">
+
+
+<div class="section-table">
     <table class="carrier-list" *ngIf="elements" >
         <thead >
           <tr>
             <th  #thenBlock *ngFor="let head of headElements" scope="col">{{head}} </th>
-
           </tr>
         </thead>
         <tbody>
@@ -37,6 +38,8 @@
             <td>{{el.phone}}</td>
           </tr>
         </tbody>
-      </table>
-
+        
+    </table>
+    <div *ngIf="!elements" class="title"><h1 #ThenBlock >Write a citiy/state.</h1></div>
+    
 </div>

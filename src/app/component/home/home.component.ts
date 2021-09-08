@@ -11,17 +11,17 @@ export class HomeComponent implements OnInit {
 
   elements: any = null;
   headElements = [ 'Carrier Name', 'Email', 'Phone Number'];
-  
+ 
   constructor(public requestsService : RequestsService) { }
-
 
   ngOnInit(): void {
 
   }
 
+  //executet on search button
   getData(data : any){
     
-    let address : string[] = [(data.city + " " + data.state)];
+    let address = (data.city + " " + data.state);
     
     this.requestsService.postReq(address)
         .subscribe(
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
               this.elements.push({
                 'name': value.Name, 
                 'email': value.Address.Email[0], 
-                "phone" : value.Address.Phone[0]});     
+                'phone': value.Address.Phone[0]});     
             })
         }
       )
