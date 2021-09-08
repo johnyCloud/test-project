@@ -9,50 +9,31 @@ import {RequestsService} from '../../sevices/requests.service'
 })
 export class HomeComponent implements OnInit {
 
-  elements: any = [
-    {id: 1, first: 'Mark', last: 'Otto', handle: '@mdo'},
-    {id: 2, first: 'Jacob', last: 'Thornton', handle: '@fat'},
-    {id: 3, first: 'Larry', last: 'the Bird', handle: '@twitter'},
-  ];
-
-  headElements = ['ID', 'Carrier Name', 'Email', 'Phone Number'];
+  elements: any = [];
+  headElements = [ 'Carrier Name', 'Email', 'Phone Number'];
   
-  //["Miami FL", "Portland OR", "CLEAR LAKE, MN"];
   constructor(public requestsService : RequestsService) { }
 
 
   ngOnInit(): void {
 
-   // this.getData(this.adress);
-    
-
   }
 
   getData(data : any){
     
-    let adress : string[] = [(data.city + "," + data.state)];
-    console.log(adress);
+    let address : string[] = [(data.city + " " + data.state)];
     
-    this.requestsService.postReq(adress)
+    this.requestsService.postReq(address)
         .subscribe(
            res => {
-            // let keys = Object.keys(res);
-            // keys.forEach(key => {
-            //   console.log(typeof key)
-            // })
-             let i = 0;
-            console.log(res.i);
-            
-            //for (l  in res) {
-            //   console.log(item );
-              
-            //  }
-             
-            // res.forEach((item : any) => {
-            //   //this.elements.push({'name': item.Name, 'email': item.Adress.Email[0], "phone" : item.Phone[0]})
-            //   console.log(item );
-              
-            // });
+            this.elements = [];
+            let values = Object.values(res);
+            values.forEach(value => {
+              this.elements.push({
+                'name': value.Name, 
+                'email': value.Address.Email[0], 
+                "phone" : value.Address.Phone[0]});     
+            })
         }
       )
   }
