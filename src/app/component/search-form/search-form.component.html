@@ -1,0 +1,15 @@
+
+<form  #f="ngForm" (ngSubmit)="confirmLocation(f.value)" >
+    <select name="state" [(ngModel)]="selectedState"  >
+        <option value="" disabled selected >Select State</option>
+        <option *ngFor="let state of stateList" [ngValue]="state">{{ state }}</option>
+    </select>
+    <ng-container *ngIf='selectedState' >
+        <select  name="city" [(ngModel)]="selectedCity"   >
+            <option value=""  disabled selected >Select City</option>
+            <option *ngFor="let city of states[selectedState]" [ngValue]="city">{{ city }}</option>
+        </select>
+    </ng-container>
+    <ng-container *ngIf='selectedCity' ><input type="number" placeholder="Write radius" [(ngModel)]="radius" name="radius"></ng-container>
+    <input type="submit" placeholder="Submit"> 
+</form>

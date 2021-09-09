@@ -9,13 +9,15 @@ import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card'
-import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+import { SearchFormComponent } from './component/search-form/search-form.component'
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SearchFormComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,6 @@ import {MatTableModule} from '@angular/material/table';
     FormsModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,11 @@
 <div class="title"><h1 >Find carriers by city and/or state</h1></div>
-<mat-card class="section" >
+<app-search-form (formEvent)="setLocation($event)" ></app-search-form>
+
+
+
+<!-- <mat-card class="section" >
     
-    <form class="example-form" #f="ngForm" (ngSubmit)="getData(f.value)">
+      c<form class="example-form" #f="ngForm" (ngSubmit)="getData(f.value)">
         <table><tr>
           <td><mat-form-field class="example-full-width" appearance="fill">
             <mat-label>City</mat-label>
@@ -42,4 +46,4 @@
     </table>
     <div *ngIf="!elements" class="title"><h1 #ThenBlock >Write a citiy/state.</h1></div>
     
-</div>
+</div> -->
