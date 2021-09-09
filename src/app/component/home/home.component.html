@@ -2,32 +2,6 @@
 <app-search-form (formEvent)="setLocation($event)" ></app-search-form>
 
 
-
-<!-- <mat-card class="section" >
-    
-      c<form class="example-form" #f="ngForm" (ngSubmit)="getData(f.value)">
-        <table><tr>
-          <td><mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>City</mat-label>
-            <input matInput placeholder="Ex. Miami" name="city" ngModel>
-          </mat-form-field></td>
-
-          <td><mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>State</mat-label>
-            <input matInput placeholder="Ex. Fl" name="state" ngModel>
-          </mat-form-field></td>
-          
-          
-        </tr>
-      <tr><td class="button"><button  mat-raised-button color="primary">Submit</button></td></tr>
-      </table>
-
-          
-    </form>    
-</mat-card>
-
-
-
 <div class="section-table">
     <table class="carrier-list" *ngIf="elements" >
         <thead >
@@ -44,6 +18,6 @@
         </tbody>
         
     </table>
-    <div *ngIf="!elements" class="title"><h1 #ThenBlock >Write a citiy/state.</h1></div>
+    <div *ngIf="!elements" class="title"><h1 #thenBlock >Select a citiy/state.</h1></div>
     
-</div> -->
+</div>

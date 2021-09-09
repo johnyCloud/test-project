@@ -1,16 +1,8 @@
 .title{
 text-align: center;
+text-transform: uppercase;
+color: #409bf0;
 padding-top: 3em;
-}
-.section{
-    justify-content: center;
-    display: flex;
-    margin: auto;
-    padding: 2em 0; 
-    width: 450px;
-}
-.button{
-    align-items: center;
 }
 
 .section-table{
@@ -32,12 +24,12 @@ padding-top: 3em;
 
 .carrier-list tr:nth-child(even){background-color: #f2f2f2;}
 
-.carrier-list tr:hover {background-color: #ddd;}
+.carrier-list tr:hover {background-color: rgb(211, 229, 250);}
 
 .carrier-list th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #6f7c77;
+    background-color: #75abfc;
     color: white;
 }
