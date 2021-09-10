@@ -27,16 +27,15 @@ export class HomeComponent implements OnInit {
   //get selctet location from form
   setLocation(newLocation : SearchLocation){
     this.location = newLocation;
-    console.log(this.location);
     this.getCitiesInRadius(this.location);
     this.getData(this.locationList)
+    this.locationList=[];
   }
 
   //cities location coordonates
   getCitiesList(){
     this.httpService.getCities()
-    .subscribe(res =>
-      {this.citiesList = Object.values(res)}
+    .subscribe( res => {this.citiesList = Object.values(res)}
     )
   }
 
@@ -45,14 +44,14 @@ export class HomeComponent implements OnInit {
     let lt : number;
     let ln : number;
     this.citiesList.forEach(item => {
-      if(item.city === location.city) 
+      if(item.city === location.city && item.state === location.state) 
         {
           lt = item.latitude;
           ln = item.longitude;
         }
     })
     this.citiesList.forEach(item => {
-      if(location.radius > this.getDistance(lt, ln, item.latitude, item.longitude)) 
+      if(location.radius >= this.getDistance(lt, ln, item.latitude, item.longitude)) 
         {
           this.locationList.push(item.city)
         }
